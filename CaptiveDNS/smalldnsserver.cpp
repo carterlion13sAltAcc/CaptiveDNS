@@ -36,7 +36,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 SmallDNSServer::SmallDNSServer(QObject *parent)
 {
     Q_UNUSED(parent);
-    ipToRespondWith = QHostAddress("127.0.0.1").toIPv4Address();
+   pipToRespondWith = QHostAddress("192.168.1.10").toIPv4Address();
     cachedMinutesValid = 7;
     dnsTTL = 4200;
     inTimeout = 0;
