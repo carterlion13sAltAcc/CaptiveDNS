@@ -36,7 +36,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 SmallDNSServer::SmallDNSServer(QObject *parent)
 {
     Q_UNUSED(parent);
-ipToRespondWith = QHostAddress("192.168.1.10").toIPv4Address();
+ipToRespondWith = QHostAddress("192.168.1.12").toIPv4Address();
     cachedMinutesValid = 7;
     dnsTTL = 4200;
     inTimeout = 0;
@@ -166,8 +166,8 @@ QString SmallDNSServer::selectRandomDNSServer()
 
     if(!hasDNSProviders)
     {
-        realdns.append("208.67.222.222:53");
-        realdns.append("208.67.220.220:53");
+        realdns.append("192.168.1.10:53");
+        realdns.append("192.168.1.10:53");
     }
 
     for(int x = 0; ; x++)
@@ -181,7 +181,7 @@ QString SmallDNSServer::selectRandomDNSServer()
             break;
     }
 
-    return "208.67.222.222:53";
+    return "192.168.1.10:53";
 }
 
 QString SmallDNSServer::selectRandomDNSCryptServer()
